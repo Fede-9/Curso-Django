@@ -29,7 +29,8 @@ def crear_favoritos(request):
         
 
     context = {
-        'form':form
+        'form':form,
+        'titulo': 'Crear favorito'
     }
 
     return render(request, 'favoritos/crear.html', context)
@@ -53,7 +54,7 @@ def actualizar_favoritos(request, pk):
 
     if request.method == 'POST':
         form = FavoritoModelForm(request.POST, instance=favorito)
-        
+
         if form.is_valid():
            form.save()
         else:
@@ -61,7 +62,8 @@ def actualizar_favoritos(request, pk):
         
 
     context = {
-        'form':form
+        'form':form,
+        'titulo': 'Actualizar favorito'
     }
 
     return render(request, 'favoritos/crear.html', context)
