@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+
+<body>
+    
+    <h1>Detalle Favorito</h1>
+    <p><a href=" {% url 'favoritos:index' %}">Atras</a></p>
+    <p>Nombre: {{ object.nombre }}</p>
+    <p>URL: {{ object.url }}</p>
+    {% comment %} ESTA FORMA PARA QUE ME LO MUESTRE COMO ENLACE {% endcomment %}
+    <p>URL: <a href=" {{ object.url }}"> {{ object.url }}</a></p>
+
+   
+
+</body>
+
+</html>

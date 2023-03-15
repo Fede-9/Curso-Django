@@ -9,6 +9,7 @@
 <body>
     
     <h1>Nuevo Favorito</h1>
+    <p><a href=" {% url 'favoritos:index' %}">Atras</a></p>
 
     <form method='post'>
         {% csrf_token %}

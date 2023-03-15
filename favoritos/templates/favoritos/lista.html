@@ -9,6 +9,9 @@
 <body>
     
     <h1>Lista Favoritos</h1>
+    <p>
+        <a href="{% url 'favoritos:crear' %}">Nuevo</a>
+    </p>
 
     <table>
         <thead>
@@ -24,7 +27,14 @@
             <tr>
                 <td>{{ favorito.nombre }}</td>
                 <td>{{ favorito.url }}</td>
-                <td><a href='/borrar/{{ favorito.pk }}'>Borrar</a></td>
+                <td>
+                    <a href="{% url 'favoritos:borrar' favorito.pk %}">Borrar</a>
+                    <br>
+                    <a href="{% url 'favoritos:detalle' favorito.pk %}">Detalle</a>
+                    <br>
+                    <a href="{% url 'favoritos:actualizar' favorito.pk %}">Actualizar</a>
+
+                </td>
 
             </tr>
             {% endfor %}
